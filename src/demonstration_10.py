@@ -14,5 +14,14 @@ Notes:
 - There won't be any awkward decimal numbers, only 0.5 to deal with.
 """
 def get_discounts(nums, percentage):
-    # Your code here
+    newArr = []
+    percentDecimal = int(percentage.split('%')[0]) / 100
 
+    for x in nums:
+        newArr.append(x * percentDecimal)
+
+    return newArr
+
+print(get_discounts([2, 4, 6, 11], "50%"))
+print(get_discounts([10, 20, 40, 80], "75%"))
+print(get_discounts([100], "45%"))
